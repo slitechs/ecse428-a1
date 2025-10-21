@@ -125,7 +125,7 @@ def test_sin_real():
 # T_SIN_CPLX1
 def test_sin_complex():
     arg = "push 1+j1 SIN pop"
-    assert calculator.execute(arg).startswith("1.298457581 + j0.634963915")
+    assert calculator.execute(arg) == "1.298457581 + j0.634963915"
 
 # T_SIN_ERR1
 def test_sin_error_underflow():
@@ -140,7 +140,7 @@ def test_asin_real():
 # T_ASIN_CPLX1
 def test_asin_complex():
     arg = "push 1+j1 ASIN pop"
-    assert calculator.execute(arg).startswith("0.666239432 + j1.061275061")
+    assert calculator.execute(arg) == "0.666239432 + j1.061275061"
 
 # T_ASIN_ERR1
 def test_asin_error_underflow():
@@ -155,7 +155,7 @@ def test_cos_real():
 # T_COS_CPLX1
 def test_cos_complex():
     arg = "push 1+j1 COS pop"
-    assert calculator.execute(arg).startswith("0.833730025 - j0.988897706")
+    assert calculator.execute(arg) == "0.833730025 - j0.988897706"
 
 # T_COS_ERR1
 def test_cos_error_underflow():
@@ -170,7 +170,7 @@ def test_acos_real():
 # T_ACOS_CPLX1
 def test_acos_complex():
     arg = "push 1+j1 ACOS pop"
-    assert calculator.execute(arg).startswith("0.904556894 - j1.061275061")
+    assert calculator.execute(arg) == "0.904556894 - j1.061275061"
 
 # T_ACOS_ERR1
 def test_acos_error_underflow():
