@@ -34,9 +34,17 @@ class Calculator:
                 i += 1
                 if i >= len(tokens):
                     raise ValueError("Missing value for push")
-                num_str = tokens[i]
+                # Collect following tokens that form the number until the next command token
+                start = i
+                j = i
+                while j < len(tokens) and tokens[j].lower() not in ("push", "pop"):
+                    j += 1
+                num_tokens = tokens[start:j]
+                num_str = "".join(num_tokens)  # remove spaces between parts
                 num = self.parse_number(num_str)
                 self.stack.append(num)
+                i = j  # continue processing from the next command token (or end)
+                continue
             elif token == "pop":
                 if not self.stack:
                     return "Error: stack underflow"
