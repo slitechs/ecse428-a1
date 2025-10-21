@@ -1,7 +1,7 @@
 import pytest
-import calculator as c
+import cdc
 
-calculator = c.Calculator()
+calculator = cdc.Calculator()
 
 #T_PUSH_REAL1
 def test_push_pop_real():
