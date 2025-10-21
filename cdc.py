@@ -167,7 +167,7 @@ class Calculator:
 # CLI
 if __name__ == "__main__":
     calc = Calculator()
-    print("Complex DC Calculator")
+    print("Complex Number Calculator")
     while True:
         try:
             command = input("cdc> ")
